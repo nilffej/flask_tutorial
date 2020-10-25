@@ -1,0 +1,73 @@
+<!-- This line indicates this HTML is an extension off of 'homepage.html'
+    It renders 'homepage.html' and then fills in the blocks according to
+    the block names. You can loosely compare it to class hierarchy in
+    an OOP language. Think of this file like a subclass of 'homepage.html'. -->
+{% extends "homepage.html" %}
+
+<!-- the block in 'homepage.html' also named 'arbitraryname'
+    that was empty when you were on the root page is going
+    to be filled now! -->
+{% block arbitraryname %}
+
+<div style="padding-top: 50px;"></div>
+<p>
+    <!-- ----- STEP 4 ----- -->
+    This is a different page! Notice how the URL corresponds to<br>
+    the <span class="c">@app.route(<span class="s">'/nothomepage'</span>)</span> from the Flask file.<br><br>
+
+    Notice how the <span class="s">'Hello!'</span> is still here. Although this page<br>
+    is a different webpage altogether, it uses the original<br>
+    <span class="s">'homepage.html'</span> as a template and fills in the respective<br>
+    Jinja blocks with the blocks defined in <span class="s">'anotherpage.html'</span>.<br><br>
+
+    Think of <span class="s">'anotherpage.html'</span> as a puzzle piece that is being<br>
+    fit into a hole from <span class="s">'homepage.html'</span> and through Jinja is how you fill it.<br><br>
+
+    However, notice how the <span class="s">'Hey there!'</span> is now gone! It's because<br>
+    when we called <span class="c">render_template(<span class="s">'anotherpage.html'</span>)</span> in <span class="c">chicken()</span>, we<br>
+    did not pass in a value for the variable <span class="v">random_text</span>.<br>
+    As a result, it's going to be empty.<br><br>
+    
+    If you'd like, try adding a parameter like we did in <span class="c">root()</span><br>
+    and refresh the page. You'll see there will now be text under <span class="s">'Hello!'</span><br><br>
+    <!-- Go to STEP 5 below -->
+
+
+
+    <!-- ----- STEP 5 ----- -->
+    <!-- Each of these hrefs below demonstrate usages of the newly
+        introduced render_template(), redirect(), and url_for()
+        functions. Have the site and 'app.py' open alongside this file
+        to better see how each part works together. -->
+
+
+    <!-- The text inside this href is generating a URL for the function
+        root() from 'app.py'.
+
+        The parameter for url_for() will be the name of the function without
+        the (). Here, we want the page associated with root(), so we're going
+        to pass in 'root'. url_for() will generate the URL associated with
+        root() by using @app.route('/'). Hence, you will be redirected to
+        'http://localhost:5000/'.
+        
+        You can check out root(), if you'd like! You'll notice that function
+        in turn renders 'homepage.html', so you're just going back to
+        the root page. -->
+    <a href="{{ url_for('root') }}">Return to homepage</a>
+    <br><br>
+
+    <!-- This href does the same thing as the previous one but differs in that 
+        we aren't using url_for() directly in the href field. Instead, we are
+        telling it to navigate to the page '/alternateroute'. The function in
+        'app.py' associated with @app.route('/alternateroute') is beef(). 
+        Go checkout beef() in 'app.py'. -->
+    <a href="/alternateroute">Return to homepage with an alternate route</a>
+    <br><br>
+
+    <!-- This href is generating a URL for the function go_to_google()
+         from 'app.py'. Go checkout go_go_google() in 'app.py'.-->
+    <a href="{{ url_for('go_to_google') }}">Go to Google!</a>
+
+</p>
+
+{% endblock %}

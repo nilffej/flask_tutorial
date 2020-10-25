@@ -1,0 +1,6 @@
+In this tutorial, I'll be introducing Static APIs!
+
+Currently, this tutorial isn't complete, but you can
+look in the code and also run this Flask app to see
+what it does:
+$ python app.py

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <!-- This line links the style sheet located in the directory 'static/'.
+        This is an overloaded implementation of url_for() that is somewhat specific
+        to doing things like linking a stylesheet. You can Google more about it,
+        but it's not that important right now. -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <center>
+        Hello!<br>
+        <!-- The string I passed in from render_template(): -->
+        {{ random_text }}<br>
+
+        <!-- Some prerequisite knowledge is that the <a> tag is used to
+            create links in HTML. The site that this tag navigates to is
+            defined by the href field. -->
+
+        <!-- ----- STEP 2 ----- -->
+        <!-- The text inside this href uses the url_for() method to generate a 
+            URL for the function chicken() from 'app.py'. This URL is generated
+            by using the parameter from @app.route('/nothomepage') associated with
+            chicken(). The URL will be 'http://localhost:5000/nothomepage/'.
+
+            Click the link and then go checkout STEP 3 in 'app.py' where
+            the function chicken() is located. -->
+        <a href="{{ url_for('chicken') }}">Click here!</a>
+    </center>
+
+    <center>
+        <!-- This is a Jinja block. Refer to the top of 'anotherpage.html'. -->
+        {% block arbitraryname %}
+        {% endblock %}
+    </center>
+</body>
+</html>

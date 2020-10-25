@@ -1,0 +1,15 @@
+{% extends "template.html" %}
+
+{%block content%}
+<h2>Explore our API implementations!</h2>
+<table width="50%">
+  <tr>
+    <td>
+      <a href="{{ url_for('itunes') }}">iTunes Search</a>
+    </td>
+    <td>
+      <a href="{{ url_for('metaweather') }}">MetaWeather</a>
+    </td>
+  </tr>
+</table>
+{%endblock%}

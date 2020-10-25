@@ -1,0 +1,57 @@
+In this tutorial, I'll be introducing the most fundamental
+parts of a Flask app.
+
+The first thing to point out is the basic file hierarchy:
+    app.py
+    templates/
+        anotherpage.html
+        homepage.html
+    static/
+        style.css
+
+This is the standard Flask file hierarchy. The directories
+'templates/' and 'static/' must be named so or else the app
+may not behave properly. You can Google more about Flask file
+hierarchy to see what other directories can exist in a Flask
+app and what belongs in each directory, but for now, just know
+HTML files will go in 'templates/' and optional styling files
+(as well as images) will go in 'static/'.
+
+In Flask development, there is a lot of communication between
+files. The Flask app file looks very different from the
+typical Python files we may be used to. A helpful way to think
+about functions in a Flask app is to see them as tunnels to
+get to different webpages.
+
+To make this tutorial more navigable, I've included steps to
+follow in each file, starting with STEP 1 in 'app.py'. I'll
+ask you to navigate between 'app.py' and the HTML files very
+often. The best way to navigate this tutorial is to have
+VSC in split screen with 'app.py' open on one side and the
+HTML files from 'templates/' open on the other side.
+
+Before hopping into 'app.py', check out the introduction
+to Jinja below.
+
+
+
+INTRODUCTION TO JINJA
+
+Jinja is a template engine that comes with Flask that has
+numerous functions:
+    - Allows you to create reusable HTML templates
+    - Reduces amount of repeated HTML
+    - Allows you to pass Python variables to HTML files
+    - Allows you to call Python functions in HTML files
+    - and more!
+
+Jinja is denoted by curly braces in HTML files.
+You can read up more on how Jinja works but for this tutorial,
+you'll be seeing:
+    - {% extends [FILENAME] %}
+    - {% block [BLOCKNAME] %}
+    - {% endblock %}
+    - {{ [FUNCTION] }}
+    - and {{ [VARIABLE] }}
+
+More will be explained as you navigate through the files!

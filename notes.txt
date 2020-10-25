@@ -1,0 +1,35 @@
+Hello, I made this Flask tutorial to help introduce the most
+basic parts of Flask. 
+
+Before you start developing, you'll need to install Flask
+through the terminal and setup something called a virtual
+environment.
+
+A virtual environment is essentially what the name suggests.
+It's a virtual environment for you to run your Flask app on.
+
+You can setup a virtual environment in your home directory (~)
+and then just use it for all Flask related projects instead
+of creating a new venv for every project as the tutorial
+linked below will suggest.
+
+Virtual Environment and Flask setup:
+https://flask.palletsprojects.com/en/1.1.x/installation/
+
+You can name your venv anything. I named mine 'asgard'.
+I also set up this alias in my terminal (.bashrc file) so
+that I can activate my virtual environment from anywhere
+instead of navigating to the directory everytime.
+
+alias venv='. ~/[YOUR VENV NAME]/Scripts/activate'
+
+For MacOS, 'activate' will be located in
+'~/[YOUR VENV NAME]/bin/activate'
+
+Whenever you are finished with your Flask coding session,
+to close your virutal environment, just run the command:
+$ deactivate
+
+After you're done installing, checkout the 'example_basic/'
+directory for an introduction to Flask.
+
